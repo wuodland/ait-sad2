@@ -9,14 +9,27 @@ package bicycles;
  *
  * @author karan
  */
+import javax.swing.JDialog;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 public class Bicycles {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         
+        bike basicbike;
+        basicbike = new type(new gears(new Basic()));
+        System.out.println("PRICE:" + basicbike.getCost());
+        
+        
+        Specifications sForm = new Specifications();
+        sForm.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        sForm.pack();
+        sForm.setLocationRelativeTo(null);
+
+        sForm.setVisible(true);
     }
     
 }
