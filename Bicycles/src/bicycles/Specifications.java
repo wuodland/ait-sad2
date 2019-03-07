@@ -5,7 +5,7 @@
  */
 package bicycles;
 
-import javafx.scene.control.RadioButton;
+//import javafx.scene.control.RadioButton;
 
 /**
  *
@@ -65,6 +65,11 @@ public class Specifications extends javax.swing.JFrame {
         jRadioButton4.setText("Without Training Wheels");
 
         jButton1.setText("Price and Sell");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("List Sells");
 
@@ -181,6 +186,10 @@ public class Specifications extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
