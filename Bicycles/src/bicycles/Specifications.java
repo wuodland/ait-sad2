@@ -71,10 +71,20 @@ public class Specifications extends javax.swing.JFrame {
         withoutTrainWheel.setText("Without Training Wheels");
 
         calcPrice.setText("Price and Sell");
+        calcPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         listSells.setText("List Sells");
 
         Close.setText("Close");
+        Close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("TeXGyrePagella", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(85, 161, 187));
@@ -155,15 +165,16 @@ public class Specifications extends javax.swing.JFrame {
                     .addComponent(withTrainWheels)
                     .addComponent(withoutTrainWheel))
                 .addGap(104, 104, 104)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(calcPrice)
-                    .addComponent(listSells)
-                    .addComponent(Close)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtFieldPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtFieldBuyer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3)
-                        .addComponent(jLabel4)))
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(calcPrice)
+                        .addComponent(listSells)
+                        .addComponent(Close)))
                 .addGap(48, 48, 48))
         );
 
@@ -178,6 +189,11 @@ public class Specifications extends javax.swing.JFrame {
     private void txtFieldBuyerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldBuyerActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFieldBuyerActionPerformed
+
+    private void CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_CloseActionPerformed
 
     /**
      * @param args the command line arguments
