@@ -20,5 +20,6 @@ public class Basic implements bike {
     public int getCost() {
         return (500);
     }
+
     
 }

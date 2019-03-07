@@ -19,9 +19,6 @@ public class Bicycles {
      */
     public static void main(String[] args) {
         
-        bike basicbike;
-        basicbike = new type(new gears(new Basic()));
-        System.out.println("PRICE:" + basicbike.getCost());
         
         
         Specifications sForm = new Specifications();

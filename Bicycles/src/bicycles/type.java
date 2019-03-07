@@ -26,6 +26,13 @@ public class type extends bikedecorator {
     
     @Override
     public int getCost(){
-        return tempbike.getCost() + 1500;
+        
+        Specifications sp=new Specifications();
+        System.out.println(sp.biketype());
+        if(sp.biketype()=="Mountain")
+            
+            return tempbike.getCost() + 1500;
+        else
+            return tempbike.getCost()+1000;
     }
 }

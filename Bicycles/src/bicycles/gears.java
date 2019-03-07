@@ -32,6 +32,21 @@ public class gears extends bikedecorator {
     
     @Override
     public int getCost(){
-        return tempbike.getCost() + 500;
+        Specifications sp=new Specifications();
+        if (sp.geared() == true)
+        {    
+            
+            System.out.println("Gears: "+sp.geartype());
+            if(sp.geartype()=="Back Only")
+                
+                return tempbike.getCost() + 500;
+            else
+                return tempbike.getCost() + 1000;
+        }
+        else{
+            System.out.println("without gears");
+            return tempbike.getCost();
+        }
+            
     }
 }
