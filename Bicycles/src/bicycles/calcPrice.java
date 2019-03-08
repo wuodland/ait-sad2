@@ -7,20 +7,8 @@ package bicycles;
 
 /**
  *
- * @author abhinavsingha
+ * @author safi
  */
-public class Basic implements bike {
-
-    @Override
-    public String getDescription() {
-        return "basic bike";
-    }
-
-    @Override
-    public int getCost() {
-        return (500);
-
-    }
-
+class calcPrice {
     
 }

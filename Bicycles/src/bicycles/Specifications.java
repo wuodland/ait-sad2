@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author safi
+ * @author karan
  */
 public class Specifications extends javax.swing.JFrame {
     static boolean geared =false;
@@ -62,6 +62,9 @@ public class Specifications extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         button1 = new java.awt.Button();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,20 +91,10 @@ public class Specifications extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-        TrainingWheelWOTW.add(withoutTrainWheel);
-        withoutTrainWheel.setText("Without Training Wheels");
-
-        calcPrice.setText("Price and Sell");
-        calcPrice.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calcPriceActionPerformed(evt);
-=======
         cbxBikeType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mountain", "Street" }));
         cbxBikeType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxBikeTypeActionPerformed(evt);
->>>>>>> a4210abef40e2576f6ab2ebf372d084c8128eb9a
             }
         });
 
@@ -141,10 +134,21 @@ public class Specifications extends javax.swing.JFrame {
 
         jLabel4.setText("Sold to:");
 
-        button1.setLabel("button1");
+        button1.setLabel("Done");
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button1ActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Type of cycle:");
+
+        jLabel6.setText("Type of Gear:");
+
+        jButton1.setText("Sell and Save");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -157,44 +161,49 @@ public class Specifications extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(179, 179, 179)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
                                     .addComponent(cbxGear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbxBikeType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(Geared))
-                        .addGap(84, 84, 84)
-                        .addComponent(notGeared)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE))
+                                    .addComponent(cbxBikeType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2)))
+                            .addComponent(jLabel5)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Geared)
+                                .addGap(27, 27, 27)
+                                .addComponent(notGeared))
+                            .addComponent(jLabel6)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtFieldPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtFieldPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
                         .addGap(30, 30, 30)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtFieldBuyer, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)))
-                .addComponent(listSells, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addComponent(Close, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(36, 36, 36)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(listSells, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Close, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                .addGap(28, 28, 28)
+                .addGap(4, 4, 4)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Geared)
                     .addComponent(notGeared))
@@ -202,13 +211,13 @@ public class Specifications extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbxGear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addGap(21, 21, 21)
                 .addComponent(cbxBikeType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(withTrainWheels)
-                    .addComponent(withoutTrainWheel))
-                .addGap(104, 104, 104)
+                .addGap(36, 36, 36)
+                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtFieldPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -216,36 +225,9 @@ public class Specifications extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addComponent(jLabel4))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(calcPrice)
                         .addComponent(listSells)
-                        .addComponent(Close)))
-=======
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Geared)
-                            .addComponent(notGeared))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbxGear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cbxBikeType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(140, 140, 140)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtFieldPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtFieldBuyer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel4))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(listSells)
-                                .addComponent(Close))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(291, 291, 291)
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
->>>>>>> a4210abef40e2576f6ab2ebf372d084c8128eb9a
+                        .addComponent(Close)
+                        .addComponent(jButton1)))
                 .addGap(48, 48, 48))
         );
 
@@ -259,56 +241,6 @@ public class Specifications extends javax.swing.JFrame {
     private void CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-<<<<<<< HEAD
-        
-    }//GEN-LAST:event_CloseActionPerformed
-
-    private void calcPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcPriceActionPerformed
-        // TODO add your handling code here:
-         int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you have recieved the money?", "Confirm database update?", JOptionPane.YES_NO_OPTION);
-          if (dialogResult == JOptionPane.YES_OPTION) {
-            try {
-                
-                SellsDao dao = new SellsDao();
-                
-                
-                Purchase p1 = new Purchase();
-                
-                
-                p1.buyer= txtFieldBuyer.getText();
-                p1.price=  Integer.parseInt(txtFieldPrice.getText());
-                dao.addPurchase(p1);
-                JOptionPane.showMessageDialog(null,"Purchase Recorded Successfully");
-                txtFieldBuyer.setText("");
-                txtFieldPrice.setText("");
-                //if (addRecord == true) {
-                //    addNew();
-                //} 
-
-               // addRecord = false;
-
-               // loadRecords();
-            } catch (SQLException ex) {
-                System.out.println(ex.getMessage());
-            }
-        }
-    }//GEN-LAST:event_calcPriceActionPerformed
-
-    private void listSellsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listSellsActionPerformed
-        // TODO add your handling code here:
-        listPurchases lp;
-        try {
-            lp = new listPurchases();
-            lp.setVisible(true);
-            dispose();
-        } catch (SQLException ex) {
-            Logger.getLogger(Specifications.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
-    }//GEN-LAST:event_listSellsActionPerformed
-
-=======
     }//GEN-LAST:event_CloseActionPerformed
 
     private void cbxGearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxGearActionPerformed
@@ -346,6 +278,14 @@ public class Specifications extends javax.swing.JFrame {
 
     private void listSellsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listSellsActionPerformed
         // TODO add your handling code here:
+         listPurchases lp;
+        try {
+            lp = new listPurchases();
+            lp.setVisible(true);
+            dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(Specifications.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_listSellsActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
@@ -360,8 +300,41 @@ public class Specifications extends javax.swing.JFrame {
         cost=basicbike.getCost();
         txtFieldPrice.setText(Integer.toString(cost)); 
     }//GEN-LAST:event_button1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you have recieved the money?", "Confirm database update?", JOptionPane.YES_NO_OPTION);
+          if (dialogResult == JOptionPane.YES_OPTION) {
+            try {
+                
+                SellsDao dao = new SellsDao();
+                
+                
+                Purchase p1 = new Purchase();
+                
+                
+                p1.buyer= txtFieldBuyer.getText();
+                p1.price=  Integer.parseInt(txtFieldPrice.getText());
+                dao.addPurchase(p1);
+                JOptionPane.showMessageDialog(null,"Purchase Recorded Successfully");
+                txtFieldBuyer.setText("");
+                txtFieldPrice.setText("");
+                //if (addRecord == true) {
+                //    addNew();
+                //} 
+
+               // addRecord = false;
+
+               // loadRecords();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
     
->>>>>>> a4210abef40e2576f6ab2ebf372d084c8128eb9a
     /**
      * @param args the command line arguments
      */
@@ -388,7 +361,6 @@ public class Specifications extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Specifications.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -407,10 +379,13 @@ public class Specifications extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbxBikeType;
     private javax.swing.JComboBox<String> cbxGear;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JButton listSells;
     private javax.swing.JRadioButton notGeared;
     private javax.swing.JTextField txtFieldBuyer;
