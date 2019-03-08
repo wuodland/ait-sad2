@@ -7,9 +7,15 @@ package bicycles;
 
 //import javafx.scene.control.RadioButton;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
+
 /**
  *
- * @author karan
+ * @author safi
  */
 public class Specifications extends javax.swing.JFrame {
 
@@ -71,10 +77,25 @@ public class Specifications extends javax.swing.JFrame {
         withoutTrainWheel.setText("Without Training Wheels");
 
         calcPrice.setText("Price and Sell");
+        calcPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcPriceActionPerformed(evt);
+            }
+        });
 
         listSells.setText("List Sells");
+        listSells.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listSellsActionPerformed(evt);
+            }
+        });
 
         Close.setText("Close");
+        Close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("TeXGyrePagella", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(85, 161, 187));
@@ -155,15 +176,16 @@ public class Specifications extends javax.swing.JFrame {
                     .addComponent(withTrainWheels)
                     .addComponent(withoutTrainWheel))
                 .addGap(104, 104, 104)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(calcPrice)
-                    .addComponent(listSells)
-                    .addComponent(Close)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtFieldPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtFieldBuyer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3)
-                        .addComponent(jLabel4)))
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(calcPrice)
+                        .addComponent(listSells)
+                        .addComponent(Close)))
                 .addGap(48, 48, 48))
         );
 
@@ -178,6 +200,57 @@ public class Specifications extends javax.swing.JFrame {
     private void txtFieldBuyerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldBuyerActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFieldBuyerActionPerformed
+
+    private void CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+        
+    }//GEN-LAST:event_CloseActionPerformed
+
+    private void calcPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcPriceActionPerformed
+        // TODO add your handling code here:
+         int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you have recieved the money?", "Confirm database update?", JOptionPane.YES_NO_OPTION);
+          if (dialogResult == JOptionPane.YES_OPTION) {
+            try {
+                
+                SellsDao dao = new SellsDao();
+                
+                
+                Purchase p1 = new Purchase();
+                
+                
+                p1.buyer= txtFieldBuyer.getText();
+                p1.price=  Integer.parseInt(txtFieldPrice.getText());
+                dao.addPurchase(p1);
+                JOptionPane.showMessageDialog(null,"Purchase Recorded Successfully");
+                txtFieldBuyer.setText("");
+                txtFieldPrice.setText("");
+                //if (addRecord == true) {
+                //    addNew();
+                //} 
+
+               // addRecord = false;
+
+               // loadRecords();
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+    }//GEN-LAST:event_calcPriceActionPerformed
+
+    private void listSellsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listSellsActionPerformed
+        // TODO add your handling code here:
+        listPurchases lp;
+        try {
+            lp = new listPurchases();
+            lp.setVisible(true);
+            dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(Specifications.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }//GEN-LAST:event_listSellsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,6 +277,7 @@ public class Specifications extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Specifications.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
