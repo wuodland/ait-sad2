@@ -13,12 +13,16 @@ import javax.swing.UnsupportedLookAndFeelException;
  *
  * @author karan
  */
+import javax.swing.JDialog;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 public class Bicycles {
 
     
     /**
      * @param args the command line arguments
      */
+<<<<<<< HEAD
     public static void main(String[] args) throws SQLException {
         // TODO code application logic here
         
@@ -31,6 +35,11 @@ public class Bicycles {
                 } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
                     System.out.println(ex.getMessage());
                 }
+=======
+    public static void main(String[] args) {
+        
+        
+>>>>>>> a4210abef40e2576f6ab2ebf372d084c8128eb9a
         
         Specifications sForm = new Specifications();
         sForm.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -38,6 +47,7 @@ public class Bicycles {
         sForm.setLocationRelativeTo(null);
 
         sForm.setVisible(true);
+<<<<<<< HEAD
         
        /* listPurchases lP = new listPurchases();
          lP.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -60,6 +70,8 @@ public class Bicycles {
       */  
        // System.out.println(DBUtilities.count);        
       
+=======
+>>>>>>> a4210abef40e2576f6ab2ebf372d084c8128eb9a
     }
     
 }

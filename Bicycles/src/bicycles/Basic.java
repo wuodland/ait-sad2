@@ -12,14 +12,18 @@ package bicycles;
 public class Basic implements bike {
 
     @Override
-    public String getdescription() {
+    public String getDescription() {
         return "basic bike";
     }
 
     @Override
     public int getCost() {
         return (500);
+<<<<<<< HEAD
         
+=======
+>>>>>>> a4210abef40e2576f6ab2ebf372d084c8128eb9a
     }
+
     
 }

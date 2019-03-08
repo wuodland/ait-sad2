@@ -11,7 +11,7 @@ package bicycles;
  */
 public interface bike {
     
-    public String getdescription();
+    public String getDescription();
     
     public int getCost();
     
