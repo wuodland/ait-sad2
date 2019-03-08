@@ -27,9 +27,6 @@ public class SellsDao {
                 String sql_stmt = "SELECT buyer FROM Bicycle.purchases where id ="+id;
                 Purchase p = new Purchase();
                 p.id = id;
-               // DBUtilities con = new DBUtilities();
-               // Statement st = con.createStatement();
-                
                 dbUtilities.ExecuteSQLStatementSelect(sql_stmt);
                 
                 dbUtilities.resultSet.next();

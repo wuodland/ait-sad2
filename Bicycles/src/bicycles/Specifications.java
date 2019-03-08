@@ -295,24 +295,16 @@ public class Specifications extends javax.swing.JFrame {
             try {
                 
                 SellsDao dao = new SellsDao();
-                
-                
                 Purchase p1 = new Purchase();
-                
-                
+                                
                 p1.buyer= txtFieldBuyer.getText();
                 p1.price=  Integer.parseInt(txtFieldPrice.getText());
                 dao.addPurchase(p1);
+                        
+                        
                 JOptionPane.showMessageDialog(null,"Purchase Recorded Successfully");
                 txtFieldBuyer.setText("");
                 txtFieldPrice.setText("");
-                //if (addRecord == true) {
-                //    addNew();
-                //} 
-
-               // addRecord = false;
-
-               // loadRecords();
             } catch (SQLException ex) {
                 System.out.println(ex.getMessage());
             }
